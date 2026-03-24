@@ -1,11 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/database.js";
+import scanRoutes from "./Routes/ScanRoutes.js"
 dotenv.config();
 const app = express();
 
 //middleware
 app.use(express.json());
+app.use('/api',scanRoutes)
 
 //database connection
 connectDB();
